@@ -1,0 +1,73 @@
+#:import utils kivy.utils
+
+ScreenManagement:
+    MainScreen:
+        id: MainDisplay
+
+<Title@Label>:
+    color: 1,0.7,0,1
+    font_size: 50
+    size: self.texture_size
+    center: root.width*0.5, root.height*0.87
+
+<Display@Label>:
+    color: 1,1,1,1
+    size_hint: 0.3, 0.05
+    font_size: 26
+
+<Input@TextInput>:
+    multiline: False
+    size_hint: 0.2, 0.05
+
+<SubmitButton@Button>:
+    color: 0,1,0,1
+    size_hint: 0.2,0.1
+
+<MainScreen>:
+    name: 'MainDisplay'
+    FloatLayout:
+        Title:
+            text: 'Spycar Receiver'
+
+        Display:
+            text: 'direction:'
+            pos_hint: {'x':0.31,'y':0.7}
+        Display:
+            id: direction
+            color: utils.get_color_from_hex('#baff36')
+            text: 'ss'
+            pos_hint: {'x':0.42,'y':0.7}
+        Display:
+            text: 'front_light_on:'
+            pos_hint: {'x':0.27,'y':0.6}
+        Display:
+            id: front_light_on
+            color: utils.get_color_from_hex('#baff36')
+            text: 'false'
+            pos_hint: {'x':0.44,'y':0.6}
+        Display:
+            text: 'video_on:'
+            pos_hint: {'x':0.3,'y':0.5}
+        Display:
+            id: video_on
+            color: utils.get_color_from_hex('#baff36')
+            text: 'false'
+            pos_hint: {'x':0.44,'y':0.5}
+        Display:
+            text: 'sensor_distance:'
+            pos_hint: {'x':0.25,'y':0.4}
+        Display:
+            id: sensor_distance
+            color: utils.get_color_from_hex('#baff36')
+            text: '520 cm'
+            pos_hint: {'x':0.46,'y':0.4}
+        Display:
+            text: 'Change Distance (cm):'
+            pos_hint: {'x':0.21,'y':0.3}
+        Input:
+            id: change_distance
+            pos_hint: {'x':0.55,'y':0.3}
+        SubmitButton:
+            text: 'Submit'
+            pos_hint: {'x':0.4,'y':0.15}
+            on_release: root.submit()
