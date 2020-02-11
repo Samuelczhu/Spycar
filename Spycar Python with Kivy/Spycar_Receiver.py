@@ -38,7 +38,6 @@ class MainScreen(Screen):
         submitDistance = self.ids.change_distance.text.replace(' ', '')  # get the distance typed
         # update to firebase
         db.reference('sensor_distance').set(submitDistance)
-        print("uploaded distance: "+submitDistance)
 
     # Update UI for direction, front_light_on, video_on, and sensor_distance
     @staticmethod
