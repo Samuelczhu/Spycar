@@ -75,6 +75,9 @@ def listener(event):
     video_on = db.reference('video_on').get()
     sensor_distance = db.reference('sensor_distance').get()
 
+    #controlling the hardware
+    controlHardware(direction, front_light_on, video_on, sensor_distance);
+    
     # update the UI
     MainScreen.updateUI(direction, front_light_on, video_on, sensor_distance)
 
@@ -82,6 +85,14 @@ def listener(event):
 # connect database to listener
 firebase_admin.db.reference('').listen(listener)
 
+# ------------------------------------- Controlling the Hardware for Raspberry Pi -------------------------------------#
+# Control the Raspberry Pi hardware
+def controlHardware(direction, front_light_on, video_on, sensor_distance):
+    #TODO: Implement this code to control the hardware on raspberry pi
+    print(direction)
+    print(front_light_on)
+    print(video_on)
+    print(sensor_distance)
 
 # To Start the app
 if __name__ == '__main__':
