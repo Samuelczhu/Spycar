@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/colorPrimaryDark">
+
+    <!-- layout appeared in all control mode -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:textSize="12sp"
+            android:textColor="@color/white"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/control_mode"
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/control_mode_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@string/button"
+                android:paddingLeft="5dp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sensor_data"
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/sensor_data_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@string/unknown"
+                android:paddingLeft="5dp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button_info"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ic_info_outline"
+            android:layout_gravity="right"/>
+        <Button
+            android:id="@+id/button_setting"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ic_settings"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="right"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_videocam" />
+            <Switch
+                android:id="@+id/switch_videocam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:theme="@style/SwitchTheme"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_highlight" />
+            <Switch
+                android:id="@+id/switch_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:theme="@style/SwitchTheme"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <!-- Layout for button control mode -->
+    <RelativeLayout
+        android:id="@+id/button_control_panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button_front"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ripple"
+            android:layout_above="@+id/button_back"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:rotation="180"
+            android:background="@drawable/ripple"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="30dp" />
+
+        <Button
+            android:id="@+id/button_right"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:rotation="90"
+            android:background="@drawable/ripple"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="-20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="60dp"/>
+
+        <Button
+            android:id="@+id/button_left"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:rotation="-90"
+            android:background="@drawable/ripple"
+            android:layout_toLeftOf="@id/button_right"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="60dp"/>
+
+    </RelativeLayout>
+
+    <!-- Layout for Wheel Control Mode -->
+    <RelativeLayout
+        android:id="@+id/wheel_control_panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioGroup
+            android:id="@+id/radio_group_wheel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="50dp">
+
+            <RadioButton
+                android:id="@+id/radio_button_front"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/green"
+                android:drawableLeft="@drawable/ic_front"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/orange"
+                android:drawableLeft="@drawable/ic_stop" />
+
+            <RadioButton
+                android:id="@+id/radio_button_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/green"
+                android:drawableLeft="@drawable/ic_back"/>
+
+        </RadioGroup>
+    </RelativeLayout>
+
+    <!-- layout for gravity control mode -->
+    <RelativeLayout
+        android:id="@+id/gravity_control_panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ToggleButton
+            android:id="@+id/toggle_button_go_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:textOff="@string/stop"
+            android:textOn="@string/go"
+            android:background="@drawable/ripple_orange"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:layout_margin="50dp"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

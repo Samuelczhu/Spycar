@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity"
+    android:background="@color/colorPrimary">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="@string/control_mode"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
+                    android:paddingTop="24dp"
+                    android:paddingLeft="16dp"/>
+
+                <Button
+                    android:id="@+id/button_info"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/ic_info_outline"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="8dp"/>
+
+            </RelativeLayout>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="60dp">
+
+                <RadioButton
+                    android:id="@+id/button_mode"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/wheel_mode"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wheel"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"
+                    android:fontFamily="sans-serif-condensed-medium"/>
+
+                <RadioButton
+                    android:id="@+id/gravity_mode"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gravity"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"
+                    android:fontFamily="sans-serif-condensed-medium"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/accelerometer_display"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-black"
+                android:paddingTop="24dp"
+                android:paddingLeft="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="56dp"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/display_x"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="X: 9.454656"/>
+                <TextView
+                    android:id="@+id/display_y"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Y: 9.454656"/>
+                <TextView
+                    android:id="@+id/display_z"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Z: 9.454656"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="90dp">
+
+                <Button
+                    android:id="@+id/button_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ripple_green"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:text="@string/ok"
+                    android:padding="8dp"/>
+
+                <Button
+                    android:id="@+id/button_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:padding="8dp"
+                    android:background="@drawable/ripple_orange"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:text="@string/cancel"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minWidth="100dp"
+                android:minHeight="100dp"/>
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
