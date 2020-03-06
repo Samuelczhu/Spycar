@@ -1,2 +1,2 @@
 # Spycar
-Please see the Android Studio code folder for java and xml codes
+Please see the app code folder for java and xml codes in Android Studio
